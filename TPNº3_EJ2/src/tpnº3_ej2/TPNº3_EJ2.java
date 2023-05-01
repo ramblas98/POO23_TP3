@@ -12,7 +12,8 @@ public class TPNº3_EJ2 {
        Camion c1 = new Camion(31.32, 10, "GSGSA", "VOLVO");
        
        c1.PesoPorCompartimiento();
-       ///7
+       System.out.println(c1.toString());
+       ///
        Autobus a1 = new Autobus(25, 2.50, "AVBNG", "Scania");
        
        double recaudado = a1.totalRecaudado();
