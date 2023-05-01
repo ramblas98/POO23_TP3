@@ -8,6 +8,7 @@ public class TPNº3_EJ1 {
 
     
     public static void main(String[] args) {
+        IntegranteEquipo miembro = new IntegranteEquipo(22,Jonathan,Cossio,22);
         
     }
     
