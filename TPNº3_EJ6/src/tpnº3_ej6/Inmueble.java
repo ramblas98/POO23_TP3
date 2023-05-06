@@ -8,14 +8,14 @@ package tpnº3_ej6;
 public class Inmueble {
     private String direccion;
     private double metrosCuadrados;
-    private boolean calidad;
-    private double precioBase;
+    private int calidad;
+    protected double precioBase;
     private int Anios;
     
     public Inmueble(){
     }
     
-    public Inmueble(String direccion, double metrosCuadrados, boolean calidad, double precioBase, int Anios){
+    public Inmueble(String direccion, double metrosCuadrados, int calidad, double precioBase, int Anios){
         this.direccion = direccion;
         this.metrosCuadrados = metrosCuadrados;
         this.calidad = calidad;
@@ -32,7 +32,7 @@ public class Inmueble {
         return metrosCuadrados;
     }
 
-    public boolean isCalidad() {
+    public int isCalidad() {
         return calidad;
     }
 
@@ -51,4 +51,23 @@ public class Inmueble {
     public void setMetrosCuadrados(double metrosCuadrados){
         this.metrosCuadrados = metrosCuadrados;
    }
+    public void setCalidad(int calidad){
+        this.calidad = calidad;
+    }
+    public void setPrecioBase(double precioBase){
+        this.precioBase = precioBase;
+    }
+    public void setAnios(int Anios){
+        this.Anios = Anios;
+    }
+    
+    public double Precio(){
+        double precioFinal;
+        if (this.Anios < 15) {
+            precioFinal = this.precioBase - (this.precioBase * 0.01); 
+        }
+        else {precioFinal = this.precioBase - (this.precioBase * 0.02);}
+        
+        return precioFinal;
+    }
 }
