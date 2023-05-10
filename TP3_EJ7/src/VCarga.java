@@ -8,17 +8,17 @@
  * @author David
  */
 public class VCarga extends Vagon {
-    private double cargaMax;
+    private int cargaMax;
     private final int guardia=2;
 
     public VCarga() {
     }
 
-    public VCarga(double cargaMax) {
+    public VCarga(int cargaMax) {
         this.cargaMax = cargaMax;
     }
 
-    public double getCargaMax() {
+    public int getCargaMax() {
         return cargaMax;
     }
 
@@ -26,19 +26,15 @@ public class VCarga extends Vagon {
         return guardia;
     }
 
-    public void setCargaMax(double cargaMax) {
+    public void setCargaMax(int cargaMax) {
         this.cargaMax = cargaMax;
     }
 
     @Override
-    public double pesoMaximo(){
+    public int pesoMaximo(){
     return this.cargaMax+160;
 }    
     public int cantPasajeroMax(){
        return 0;
-    }
-    @Override
-    public boolean esLiviano(){
-       return false;
     }
 }

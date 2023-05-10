@@ -40,12 +40,8 @@ public class VPasajero extends Vagon{
         else return this.largo*10;
     }
     @Override
-    public double pesoMaximo(){
+    public int pesoMaximo(){
         int CantP = cantPasajeroMax();
         return CantP*80;
-    }
-    @Override
-    public boolean esLiviano(){
-        return false;
     }
 }

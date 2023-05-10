@@ -56,7 +56,12 @@ public class Formacion {
     }
     
     public int cantPasajeroMax(){
-        return 0;
+        int i,cantMP=0;
+        
+        for(i=0;i<this.cantV;i++){
+            cantMP = cantMP + this.misV[i].cantPajaseroMax();
+        }
+        return cantMP;
     }
     public int cantVagonLiviano(){
         int i,c;
@@ -67,11 +72,38 @@ public class Formacion {
         }
         return c;
     }
+    public double velocidadMaxima(){
+         int i;
+        double velocMin = this.misL[0].getVelocidadMax();
+        for(i=1;i<this.cantL;i++){
+            if(this.misL[i].getVelocidadMax()< velocMin) velocMin = this.misL[i].getVelocidadMax();
+        }
+        return velocMin;
+    }
     public boolean esEficiente(){
-        return false;
+        int i;
+        boolean ban;
+        
+        i=0;
+        ban=true;
+        while(i<this.cantL && ban==true){
+            if(this.misL[i].esEficiente()!=true)ban=false;
+            else i++;
+        }
+        return ban;
     }
     public boolean puedeMoverse(){
-        return false;
+        int i,peso=0;
+        double arrastreU=0;
+        
+        for(i=0;i<this.cantL;i++){
+            arrastreU = arrastreU + this.misL[i].arrastreUtil();
+        }
+        for(i=0;i<this.cantV;i++){
+            peso = peso + this.misV[i].pesoMaximo();
+        }
+        return arrastreU >= peso;
+        
     }
     public double kilosEmpuje(){
         return 0;

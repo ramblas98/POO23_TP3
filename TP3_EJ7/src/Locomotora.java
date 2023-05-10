@@ -46,7 +46,8 @@ public class Locomotora {
     }
     
     public boolean esEficiente(){
-        return false;
+        return this.peso*5<=this.pesoMaxA;
+        
     }
     public double arrastreUtil(){
         return this.pesoMaxA - this.peso;

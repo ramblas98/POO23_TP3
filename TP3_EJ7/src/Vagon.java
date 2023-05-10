@@ -9,7 +9,7 @@
  */
 public class Vagon {
     
-    public double pesoMaximo(){
+    public int pesoMaximo(){
         return 0;
     }
     public boolean esLiviano(){
