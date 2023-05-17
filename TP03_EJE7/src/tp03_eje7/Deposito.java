@@ -88,4 +88,17 @@ public class Deposito {
         }
         return b;
     }
+    public void agregar(int i){
+        if(!this.listafor[i].puedeMoverse()){
+            int peso=this.listafor[i].kilosEmpuje();
+            int j=0;
+            boolean b=false;
+            while(j!=this.cantidadfor && b!=true){
+                if(this.listaloco[j].arrastreUtil()>=peso) b=true;
+                else j=j+1;
+            }
+            
+        }
+        else System.out.println("Ya Puede Moverse");
+    }
 }
